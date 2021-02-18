@@ -8,7 +8,7 @@ function generateManager(data) {
             <i class="fas fa-user"></i>
             <div class="card-content">
                 <h2>${data.managerName}<small>Manager</small></h3>
-                <h6>${data.managerID}</h6>
+                <h6>${data.managerId}</h6>
                 <h6>${data.managerEmail}</h6>
                 <h6>${data.managerOfficeNumber}</h6>            
             </div>
