@@ -10,7 +10,7 @@ function generateIntern(data) {
             <div class="card-content">
                 <h2>${data.name}<small>Intern</small></h3>
                 <h6>${data.id}</h6>
-                <h6>${data.email}</h6>
+                <h6><a href="mailto:">${data.email}</a></h6>
                 <h6>${data.school}</h6>            
             </div>
         </div>

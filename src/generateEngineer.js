@@ -10,7 +10,7 @@ function generateEngineer(data) {
             <div class="card-content">
                 <h2>${data.name}<small>Engineer</small></h3>
                 <h6>${data.id}</h6>
-                <h6>${data.email}</h6>
+                <h6><a href="mailto:">${data.email}</a></h6>
                 <h6>${data.github}</h6>            
             </div>
         </div>

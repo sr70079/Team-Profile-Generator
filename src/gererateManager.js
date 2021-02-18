@@ -11,7 +11,7 @@ function generateManager(data) {
             <div class="card-content">
                 <h2>${data.name}<small>Manager</small></h3>
                 <h6>${data.id}</h6>
-                <h6>${data.email}</h6>
+                <h6><a href="mailto:">${data.email}</a></h6>
                 <h6>${data.officeNumber}</h6>            
             </div>
         </div>
