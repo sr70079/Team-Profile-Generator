@@ -23,7 +23,7 @@ function generateTeamProfile(employeeCard) {
     
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
-          <span class="navbar-brand mb-0 h1">Team Profile</span>
+          <span class="navbar-brand h1">Team Profile</span>
         </div>
     </nav>
     
@@ -34,9 +34,9 @@ function generateTeamProfile(employeeCard) {
         <div class="container">
             <div class="row">   
    
-                    <div class="card employeeCard">
-                       ${employeeCard}
-                    </div>                    
+                   
+                ${employeeCard}
+                                  
     
             </div>
         </div>

@@ -8,10 +8,10 @@ function generateEngineer(data) {
                 <i class="fas fa-user fa-5x"></i>
             </div>
             <div class="card-content">
-                <h2>${data.engineerName}<small>Engineer</small></h3>
-                <h6>${data.engineerId}</h6>
-                <h6>${data.engineerEmail}</h6>
-                <h6>${data.engineerGithub}</h6>            
+                <h2>${data.name}<small>Engineer</small></h3>
+                <h6>${data.id}</h6>
+                <h6>${data.email}</h6>
+                <h6>${data.github}</h6>            
             </div>
         </div>
         

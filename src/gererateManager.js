@@ -9,10 +9,10 @@ function generateManager(data) {
                 <i class="fas fa-user fa-5x"></i>
             </div>
             <div class="card-content">
-                <h2>${data.managerName}<small>Manager</small></h3>
-                <h6>${data.managerId}</h6>
-                <h6>${data.managerEmail}</h6>
-                <h6>${data.managerOfficeNumber}</h6>            
+                <h2>${data.name}<small>Manager</small></h3>
+                <h6>${data.id}</h6>
+                <h6>${data.email}</h6>
+                <h6>${data.officeNumber}</h6>            
             </div>
         </div>
         

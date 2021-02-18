@@ -8,10 +8,10 @@ function generateIntern(data) {
                 <i class="fas fa-user fa-5x"></i>
             </div>
             <div class="card-content">
-                <h2>${data.internName}<small>Intern</small></h3>
-                <h6>${data.internId}</h6>
-                <h6>${data.internEmail}</h6>
-                <h6>${data.internSchool}</h6>            
+                <h2>${data.name}<small>Intern</small></h3>
+                <h6>${data.id}</h6>
+                <h6>${data.email}</h6>
+                <h6>${data.school}</h6>            
             </div>
         </div>
         
