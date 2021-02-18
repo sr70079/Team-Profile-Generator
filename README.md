@@ -2,7 +2,7 @@
 
 UNC Bootcamp Homework #10
 
-[Team Profile Generator](***insert link to video)
+[Team Profile Generator](https://drive.google.com/file/d/1ia_5qBJf8kqlakly9bx5wC4j9w_CA_3d/view)
 
 
 ### Table of Contents:
