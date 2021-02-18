@@ -47,6 +47,8 @@ const managerQuestons = () => {
 
     ]).then(data => {
 
+        console.log(data)
+
 
         const manager = new Manager(data.managerName, data.managerId, data.managerEmail, data.managerOfficeNumber)
         team.push(manager)
@@ -152,7 +154,6 @@ const employeeTypeQuestion = () => {
         } else {
             generateTeam ()
         }
-
         
     })  
 
@@ -162,7 +163,7 @@ function generateTeam() {
 
     const content = generateTeamProfile(employeeCard())
   
-        fs.writeFile('./dist/team.html', content, err => {
+        fs.writeFile('./output/team.html', content, err => {
             if(err) console.log(err);
             else console.log("success!");
         });
