@@ -1,8 +1,18 @@
 // TODO: Include packages needed for this application
 const fs = require("fs");
 const inquirer = require("inquirer");
+const Employee = require("./lib/employee");
+const Manager = require("./lib/manager");
+const Engineer = require("./lib/engineer");
+const Intern = require("./lib/intern");
 
-const generateTeamProfile = require("./");
+
+const generateTeamProfile = require("./src/generateTeamProfile");
+const generateManager = require("./src/gererateManager");
+const generateEngineer = require("./src/generateEngineer");
+const generateIntern = require("./src/generateIntern");
+
+const team = [];
 
 // TODO: Create an array of questions for user input
 const questions = () => {
@@ -10,31 +20,32 @@ const questions = () => {
         {
             type: 'input', 
             message: 'What is the team manager\'s name?',
-            name: 'manager name',
-            default: 'input'
+            name: 'managerName',
         },
         {
             type: 'input', 
             message: 'What is the team manager\'s ID',
-            name: 'manager id',
-            default: 'number'
-            // message to say: Please enter a positive number greater than zero
+            name: 'managerId',
+            // validate: function (value) {
+            //     var valid = !isNaN(parseFloat(value));
+            //     return valid || 'Please enter a number';
+            //   },
+            //   filter: Number,            
         },
         {
             type: 'input', 
             message: 'What is the team manager\'s email?',
-            name: 'manager email',
-            default: 'input'
+            name: 'managerEmail',
            
         },
         {
             type: 'input', 
             message: 'What is the team manager\'s office number?',
-            name: 'manager office number',
-            default: 'input'
+            name: 'managerOfficeNumber',
+            
         },
         {
-            type: 'choices',
+            type: 'list',
             message:'Which type of team member would you like to add?', 
             name: 'team member type',
             choices: ["Engineer", "Intern", "I do not want to add anymore team members at this time"]
@@ -43,63 +54,51 @@ const questions = () => {
         {
             type: 'input', 
             message: 'What is your engineer\'s name?',
-            name: 'engineer name',
-            default: 'input'
+            name: 'engineerName',
         },   
         {
             type: 'input', 
             message: 'What is your engineer\'s ID?',
-            name: 'engineer id',
-            default: 'number'
-        
-            // message to say: Please enter a positive number greater than zero
+            name: 'engineerId',
         },          
         {
             type: 'input', 
             message: 'What is your engineer\'s email?',
-            name: 'engineer email',
-            default: 'input'
+            name: 'engineeeEmail',
         },
         {
             type: 'input', 
             message: 'What is your engineer\'s GitHub username?',
-            name: 'engineer github',
-            default: 'input'
+            name: 'engineerGithub',
         }, 
         {
-            type: 'choices',
+            type: 'list',
             message:'Which type of team member would you like to add?', 
             name: 'team member type',
             choices: ["Engineer", "Intern", "I do not want to add anymore team members at this time"]
-            // needs to switch to engineer questoins or intern questoins depending on input
         },  
         {
             type: 'input', 
             message: 'What is your intern\'s name?',
-            name: 'intern name',
-            default: 'input'
+            name: 'internName',
         },   
         {
             type: 'input', 
             message: 'What is your intern\'s ID?',
-            name: 'intern id',
-            default: 'number'
-            // message to say: Please enter a positive number greater than zero
+            name: 'internId',
         },          
         {
             type: 'input', 
             message: 'What is your intern\'s email?',
-            name: 'intern email',
-            default: 'input'
+            name: 'internEmail',
         },
         {
             type: 'input', 
             message: 'What is your intern\'s school?',
-            name: 'intern school',
-            default: 'input'
+            name: 'internSchool',
         },
         {
-            type: 'choices',
+            type: 'list',
             message:'Which type of team member would you like to add?', 
             name: 'team member type',
             choices: ["Engineer", "Intern", "I do not want to add anymore team members at this time"]
@@ -107,14 +106,14 @@ const questions = () => {
         },  
     ]).then(data => {
 
-        // console.log(data)
+        console.log(data)
 
-        // const content = generateMarkdown(data)        
+        const content = generateTeamProfile(data)        
         
-        // fs.writeFile("README.md", content, err => {
-        //     if(err) console.log(err);
-        //     else console.log("success!");
-        // });
+        fs.writeFile('./dist/team.html', content, err => {
+            if(err) console.log(err);
+            else console.log("success!");
+        });
 
     });
 
